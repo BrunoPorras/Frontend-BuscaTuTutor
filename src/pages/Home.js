@@ -1,7 +1,11 @@
+import NavbarLanding from "../components/NavbarLanding"
 
 const Home = () => {
     return (
-        <div>Landing page</div>
+        <div>
+            <NavbarLanding/>
+            
+        </div>
     )
 }
 
