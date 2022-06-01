@@ -1,15 +1,11 @@
-# Getting Started with Create React App
+# Plantilla base para cualquier app de react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
+## Comandos a usar
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Con este comando podrás ejecutar la aplicación de react de manera local en el siguiente enlace: [http://localhost:3000](http://localhost:3000)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cada que realices cambios en código estos se verán reflejados en tu página sin la necesidad de refrescarla, como si usaras nodemon.
