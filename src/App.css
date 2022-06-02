@@ -8,11 +8,13 @@
 :root {
     /*Lista de variables a usar en código*/
     --color-primary: #D9D9D9;
+    --gris-soft: #F3EDED;
     --gris-letra: #9F9C9C;
     --gris-titulo: #555555;
     --azul-inicio: #2D68C1;
     --verde-inicio: #39C12D;
     --rojo-inicio: #C1362D;
+    --naranja-text: #F87A06;
 }
 body {
     color: #000;
