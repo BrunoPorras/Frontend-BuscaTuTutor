@@ -1,0 +1,48 @@
+.portada {    
+    background-image: url("https://i.ibb.co/QK9N2rn/portada.png");    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;    
+    height: 90vh;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.item {
+    margin: 20px;
+    margin-left: 40px;
+    width: 50%;
+}
+
+.tituloPortada{    
+    font-size: 50px;
+    color: #FFF;
+}
+
+.subtituloPortada{
+    font-size: 25px;
+    color: #FFF;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.vermas{
+    font-size: 20px;
+    margin: 10px;
+    padding: 25px 15px;
+    background: var(--azul-inicio);
+    color: #FFF;
+    border-radius: 40px;
+    width: 30vh;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .tituloPortada{
+        font-size: 30px;    
+    }
+    .subtituloPortada{
+        font-size: 18px;        
+    }
+  }
