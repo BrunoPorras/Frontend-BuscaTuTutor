@@ -16,7 +16,8 @@
 .option {
     margin: 10px;
     color: var(--gris-letra);
-
+    font-size: 20px;
+    font-weight: 800;
 }
 /*Botones*/
 .verTutor {

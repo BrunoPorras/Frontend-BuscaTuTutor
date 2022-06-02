@@ -45,4 +45,38 @@
     .subtituloPortada{
         font-size: 18px;        
     }
-  }
+}
+.whatContainer {
+    width: 100%;
+    padding: 70px;
+    background: #F6F6F6;
+}
+.whatContainer > p {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--gris-titulo);
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.itemI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    max-width: 400px;
+}
+.itemI > img {
+    width: 200px;
+    height: 170px;
+    margin: 30px;
+}
+.itemI > p {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+}
