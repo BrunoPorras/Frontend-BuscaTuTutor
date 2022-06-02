@@ -56,4 +56,41 @@ const QueHacemos = () => {
     )
 }
 
-export { Portada, QueHacemos }
+const Testimonios = () => {
+    return(
+        <div className={styles.whatContainer}>
+            <p>Lo que nuestros clientes dicen de la App busca tu tutor</p>
+            <div className={styles.itemsContainer}>
+                <div className={styles.testItem}>
+                    <p>A través de estos años recomendando tutores de calidad</p>
+                    <div className={styles.testImgs}>
+                        <img src='' alt='Cantidad de estudiantes satisfechos'/>
+                        <img src='' alt='Imagen al lado de esa en el figma'/>
+                    </div>
+                </div>
+                <div className={styles.testimonios}>
+                    <div className={styles.testimonio}>
+                        <p className={styles.testDesc}>
+                            “Cuando conoci la aplicacion por primera vez me encantó 
+                            y desde ese momento sigo usandola para contratar tutores.”
+                        </p>
+                        <p className={styles.testAutor}>
+                            Angie Abanto, amante de bellido
+                        </p>
+                    </div>
+                    <div className={styles.testimonio}>
+                        <p className={styles.testDesc}>
+                            “Fue de las mejores herramientas que me ayudaron a solventar 
+                            mis dudas universitarias y preuniversitarias”
+                        </p>
+                        <p className={styles.testAutor}>
+                            Johan Mitma, amigo de Angie Abanto
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export { Portada, QueHacemos, Testimonios }

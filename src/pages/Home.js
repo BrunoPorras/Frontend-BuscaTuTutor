@@ -1,4 +1,5 @@
 import NavbarLanding from "../components/Home/NavbarLanding"
+import { Testimonios } from "../components/Home/Portada"
 import { Portada, QueHacemos } from "../components/Home/Portada"
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
             <NavbarLanding/>
             <Portada/>
             <QueHacemos/>
+            <Testimonios/>
         </div>
     )
 }
