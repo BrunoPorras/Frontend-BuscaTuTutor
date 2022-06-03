@@ -1,9 +1,12 @@
 import styles from '../../styles/Portada.module.css'
 
 //  Imágenes requeridas para la landing page
-import Qh1 from '../../assets/qh1.jpg'
-import Qh2 from '../../assets/qh2.jpg'
-import Qh3 from '../../assets/qh3.jpg'
+import Imagen1 from '../../assets/Landing page/Imagen1.png'
+import Imagen2 from '../../assets/Landing page/Imagen2.png'
+import Imagen3 from '../../assets/Landing page/Imagen3.png'
+import total_users from '../../assets/Landing page/total_users.png'
+import icono_logro from '../../assets/Landing page/icono_logro.png'
+import chat from '../../assets/Landing page/chat.png'
 
 const Portada = () => {
     return(        
@@ -29,7 +32,7 @@ const QueHacemos = () => {
             <p>¿Qué hacemos?</p>
             <div className={styles.itemsContainer}>
                 <div className={styles.itemI}>
-                    <img src={Qh1} alt="Imagen" />
+                    <img src={Imagen1} alt="Imagen" />
                     <p>
                         Reforzamos los conocimientos de los estudiantes pre y universitarios
                         brindando una gama de profesores a su disposición, en base a sus 
@@ -37,7 +40,7 @@ const QueHacemos = () => {
                     </p>
                 </div>
                 <div className={styles.itemI}>
-                    <img src={Qh2} alt="Imagen" />
+                    <img src={Imagen2} alt="Imagen" />
                     <p>
                         Plataforma innovadora que conecta a estudiantes y alumnos de una manera 
                         sencilla, permitiendo encontrar los tutores que más se ajusten a las 
@@ -45,7 +48,7 @@ const QueHacemos = () => {
                     </p>
                 </div>
                 <div className={styles.itemI}>
-                    <img src={Qh3} alt="Imagen" />
+                    <img src={Imagen3} alt="Imagen" />
                     <p>
                         Brindamos la oportunidad a los alumnos que poseen buen rendimiento 
                         académico de ofrecer sus servicios que serán remunerados.
@@ -62,27 +65,32 @@ const Testimonios = () => {
             <p>Lo que nuestros clientes dicen de la App busca tu tutor</p>
             <div className={styles.itemsContainer}>
                 <div className={styles.testItem}>
-                    <p>A través de estos años recomendando tutores de calidad</p>
+                    <div className={styles.testIntro}>A través de estos años recomendando tutores de calidad</div>
                     <div className={styles.testImgs}>
-                        <img src='' alt='Cantidad de estudiantes satisfechos'/>
-                        <img src='' alt='Imagen al lado de esa en el figma'/>
+                        <img src={total_users} alt='Cantidad de estudiantes satisfechos'/>
+                        <img src={icono_logro} alt='Imagen al lado de esa en el figma'/>
                     </div>
                 </div>
                 <div className={styles.testimonios}>
                     <div className={styles.testimonio}>
-                        <p className={styles.testDesc}>
-                            “Cuando conoci la aplicacion por primera vez me encantó 
-                            y desde ese momento sigo usandola para contratar tutores.”
-                        </p>
+                        <div className={styles.descContainer}>
+                            <p className={styles.testDesc}>
+                                “Cuando conoci la aplicacion por primera vez me encantó 
+                                y desde ese momento sigo usandola para contratar tutores.”
+                            </p>
+                            <img src={chat} alt='Imagen de chat'/>
+                        </div>
                         <p className={styles.testAutor}>
                             Angie Abanto, amante de bellido
                         </p>
                     </div>
                     <div className={styles.testimonio}>
-                        <p className={styles.testDesc}>
-                            “Fue de las mejores herramientas que me ayudaron a solventar 
-                            mis dudas universitarias y preuniversitarias”
-                        </p>
+                        <div className={styles.descContainer}>
+                            <p className={styles.testDesc}>
+                                “Fue de las mejores herramientas que me ayudaron a solventar 
+                                mis dudas universitarias y preuniversitarias”
+                            </p>
+                        </div>
                         <p className={styles.testAutor}>
                             Johan Mitma, amigo de Angie Abanto
                         </p>
@@ -93,4 +101,12 @@ const Testimonios = () => {
     )
 }
 
-export { Portada, QueHacemos, Testimonios }
+const Footer = () => {
+    return(
+        <div className={styles.foot}>
+            2022 @ Page todos los derechos reservados
+        </div>
+    )
+}
+
+export { Portada, QueHacemos, Testimonios, Footer }
