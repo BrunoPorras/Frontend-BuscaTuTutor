@@ -38,14 +38,6 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .tituloPortada{
-        font-size: 30px;    
-    }
-    .subtituloPortada{
-        font-size: 18px;        
-    }
-}
 .whatContainer {
     width: 100%;
     padding: 70px;
@@ -58,6 +50,7 @@
 }
 
 .itemsContainer {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -72,7 +65,7 @@
 }
 .itemI > img {
     width: 200px;
-    height: 170px;
+    height: 200px;
     margin: 30px;
 }
 .itemI > p {
@@ -85,18 +78,47 @@
     flex: 1;
     padding: 15px;
 }
+.testImgs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 500px;
+}
+.testImgs > img:first-child {
+    width: 300px;
+    margin: 30px;
+}
+.testImgs > img:nth-child(2) {
+    width: 200px;
+    margin: 30px;
+}
 .testimonios {
     flex: 1;
+    min-width: 500px;
 }
 .testimonio {
     background: var(--gris-soft);
     margin: 15px;
     padding: 25px;
 }
+.descContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.descContainer > img {
+    position: absolute;
+    width: 100px;
+    right: -60px;
+    top: -60px;
+}
 .testDesc {
+    font-style: italic;
     font-size: 22px;
     font-weight: 300;
-    padding-right: 20%;
+    width: 80%;
 }
 .testAutor {
     font-size: 22px;
@@ -105,4 +127,38 @@
     color: var(--naranja-text);
     margin-top: 15px;
     padding-right: 10%;
+}
+
+.foot {
+    width: 100%;
+    background: var(--marron);
+    color: #FFF;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    .tituloPortada{
+        font-size: 30px;    
+    }
+    .subtituloPortada{
+        font-size: 18px;        
+    }
+    .testimonios {
+        min-width: 300px;
+    }
+    .testDesc {
+        font-size: 18px;
+    }
+    .testAutor {
+        font-size: 17px;
+    }
+    .testIntro {
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        font-size: 20px;
+    }
 }
