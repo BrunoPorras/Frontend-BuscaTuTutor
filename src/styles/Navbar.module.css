@@ -1,43 +1,103 @@
 .container {
     background: #FFF;
+    position: sticky;
+    top: 0;
+    width: 100%;
     height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    z-index: 100;
 }
-.options {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+.wraper {
     width: 100%;
+    max-width: 1300px;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
 }
-.option {
-    margin: 10px;
-    color: var(--gris-letra);
-    font-size: 20px;
-    font-weight: 800;
+.logoContainer > img {
+    padding: 15px 30px;
+    height: 100px;
 }
-/*Botones*/
-.verTutor {
-    margin: 10px;
-    padding: 10px 20px;
-    background: var(--azul-inicio);
-    color: #FFF;
-    border-radius: 50px;
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
 }
-.login {
-    margin: 10px;
-    padding: 10px 20px;
-    background: var(--verde-inicio);
-    color: #FFF;
-    border-radius: 10px;
+.menuItem {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
 }
-.signUp {
-    margin: 10px;
-    padding: 10px 20px;
-    background: var(--rojo-inicio);
-    color: #FFF;
-    border-radius: 10px;
+.toggle {
+    display: none;
 }
+
+@media (min-width: 950px) {
+    .verTutor {
+        margin: 10px;
+        padding: 10px 20px;
+        background: var(--azul-inicio);
+        color: #FFF;
+        border-radius: 50px;
+    }
+    .login {
+        margin: 10px;
+        padding: 10px 20px;
+        background: var(--verde-inicio);
+        color: #FFF;
+        border-radius: 10px;
+    }
+    .signUp {
+        margin: 10px;
+        padding: 10px 20px;
+        background: var(--rojo-inicio);
+        color: #FFF;
+        border-radius: 10px;
+    }
+}
+@media (max-width: 950px) {
+    .menu {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: calc(100vh - 100px);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #FFF;
+        transition: .4s ease-in-out;
+    }
+    .toggle {
+        display: block;
+        font-size: 25px;
+        padding: 20px;
+    }
+    .verTutor {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+    .login {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+    .signUp {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+}
+
