@@ -10,7 +10,7 @@ import chat from '../../assets/Landing page/chat.png'
 
 const Portada = () => {
     return(        
-        <div className={styles.portada}>
+        <div id='inicio' className={styles.portada}>
             <div className={styles.item}>            
                 <p className={styles.tituloPortada}>
                     Descubre más de nuestra web para encontrar a tu tutor ideal.
@@ -28,7 +28,7 @@ const Portada = () => {
 
 const QueHacemos = () => {
     return(
-        <div className={styles.whatContainer}>
+        <div id='que' className={styles.whatContainer}>
             <p>¿Qué hacemos?</p>
             <div className={styles.itemsContainer}>
                 <div className={styles.itemI}>
@@ -61,7 +61,7 @@ const QueHacemos = () => {
 
 const Testimonios = () => {
     return(
-        <div className={styles.whatContainer}>
+        <div id='test' className={styles.whatContainer}>
             <p>Lo que nuestros clientes dicen de la App busca tu tutor</p>
             <div className={styles.itemsContainer}>
                 <div className={styles.testItem}>

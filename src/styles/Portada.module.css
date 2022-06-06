@@ -107,6 +107,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    z-index: 90;
 }
 .descContainer > img {
     position: absolute;
