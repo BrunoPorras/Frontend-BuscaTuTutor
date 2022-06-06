@@ -45,6 +45,7 @@
         background: var(--azul-inicio);
         color: #FFF;
         border-radius: 50px;
+        text-decoration: none;
     }
     .login {
         margin: 10px;
@@ -52,6 +53,7 @@
         background: var(--verde-inicio);
         color: #FFF;
         border-radius: 10px;
+        text-decoration: none;
     }
     .signUp {
         margin: 10px;
@@ -59,6 +61,7 @@
         background: var(--rojo-inicio);
         color: #FFF;
         border-radius: 10px;
+        text-decoration: none;
     }
 }
 @media (max-width: 950px) {
@@ -77,6 +80,7 @@
         display: block;
         font-size: 25px;
         padding: 20px;
+        cursor: pointer;
     }
     .verTutor {
         height: 100%;
@@ -84,6 +88,8 @@
         justify-content: center;
         align-items: center;
         padding: 0 15px;
+        text-decoration: none;
+        color: #000;
     }
     .login {
         height: 100%;
@@ -91,6 +97,8 @@
         justify-content: center;
         align-items: center;
         padding: 0 15px;
+        text-decoration: none;
+        color: #000;
     }
     .signUp {
         height: 100%;
@@ -98,6 +106,8 @@
         justify-content: center;
         align-items: center;
         padding: 0 15px;
+        text-decoration: none;
+        color: #000;
     }
 }
 
