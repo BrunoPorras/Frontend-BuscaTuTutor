@@ -1,3 +1,7 @@
+//  React
+import { Link } from 'react-router-dom'
+
+//  Estilos, assets y efectos
 import { Link as ScrollLink } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -6,44 +10,8 @@ import styles from '../../styles/Navbar.module.css'
 
 import { useMenuMobile } from '../../hooks/useMenuMobile'
 
+
 const NavbarLanding = () => {
-
-    const [menuOpen, changeMenuOpen ] = useMenuMobile()
-    
-    return(
-        <div className={styles.container}>
-            <div className={styles.icon}>
-                <img src={icono} alt="ícono de la app" />
-            </div>
-            <div className={styles.options}>
-                <FontAwesomeIcon icon={faBars} 
-                    className={styles.toggle}
-                    onClick={changeMenuOpen}
-                />
-                <a href='#inicio' className={styles.option}>
-                    Inicio
-                </a>
-                <a href='#que' className={styles.option}>
-                    ¿Qué hacemos?
-                </a>
-                <a href='#test' className={styles.option}>
-                    Testimonios
-                </a>
-                <p className={styles.verTutor}>
-                    Ver tutores
-                </p>
-                <p className={styles.login}>
-                    Login
-                </p>
-                <p className={styles.signUp}>
-                    Sign up
-                </p>
-            </div>
-        </div>
-    )
-}
-
-const NavPrueba = () => {
 
     const [menuOpen, changeMenuOpen, closeMenuOpen ] = useMenuMobile()
 
@@ -70,19 +38,19 @@ const NavPrueba = () => {
                     <ScrollLink className={styles.menuItem} to="test" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenuOpen}>
                         Testimonios
                     </ScrollLink>
-                    <p className={styles.verTutor}>
+                    <Link to='demo' className={styles.verTutor}>
                         Ver tutores
-                    </p>
-                    <p className={styles.login}>
+                    </Link>
+                    <Link to='login' className={styles.login}>
                         Login
-                    </p>
-                    <p className={styles.signUp}>
+                    </Link>
+                    <Link to='register' className={styles.signUp}>
                         Sign up
-                    </p>
+                    </Link>
                 </div>
             </div>
         </div>
     )
 }
 
-export default NavPrueba
+export default NavbarLanding
