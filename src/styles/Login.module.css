@@ -1,0 +1,71 @@
+.contenedorUno {
+    
+    /*height: 79.5vh;*/
+    height: 85.1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;    
+}
+
+.contenedorUnoA {
+    background-image: url("https://i.ibb.co/3C6Z2MM/iniciarsesion.png");  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 600px;
+    width: 500px;  
+    margin: 20px;   
+    color: #FFF; 
+    padding: 50px;
+    border-radius:10%;
+}
+
+.contenedorUnoB {
+
+}
+
+.tituloLogin {
+    font-size: 25px;
+    text-align: center;
+}
+
+.labelLogin {
+    font-size: 18px;
+    margin: 10px;
+}
+
+input {
+    display: block;    
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 100%;    
+    font-size: 17px;
+    margin: 15px;
+    color: #FFF;
+    margin-bottom: 50px;
+    outline: none;
+}
+
+.botonLogin {
+    font-size: 17px;
+    padding: 20px;    
+    width: 70%;    
+    background-color: #0E3E61;
+    color: #FFF;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.divbotonLogin {
+    display: flex;
+    justify-content: center;    
+}
+
+
+.footerLogin {
+    width: 100%;
+    align-self:flex-end;
+}
