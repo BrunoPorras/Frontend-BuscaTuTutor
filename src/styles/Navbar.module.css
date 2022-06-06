@@ -111,3 +111,35 @@
     }
 }
 
+.option {
+    margin: 10px;
+    color: var(--gris-letra);
+    font-size: 20px;
+    font-weight: 800;
+}
+/*Botones*/
+.verTutor {
+    margin: 10px;
+    padding: 10px 20px;
+    background: var(--azul-inicio);
+    color: #FFF;
+    border-radius: 50px;
+}
+.login {
+    margin: 10px;
+    padding: 10px 20px;
+    background: var(--verde-inicio);
+    color: #FFF;
+    border-radius: 10px;
+}
+.signUp {
+    margin: 10px;
+    padding: 10px 20px;
+    background: var(--rojo-inicio);
+    color: #FFF;
+    border-radius: 10px;
+}
+
+.logo {    
+    padding: 20px;
+}
