@@ -81,7 +81,7 @@ const Testimonios = () => {
                             <img src={chat} alt='Imagen de chat'/>
                         </div>
                         <p className={styles.testAutor}>
-                            Angie Abanto, amante de bellido
+                            Miguel Collantes, estudiante de la plataforma
                         </p>
                     </div>
                     <div className={styles.testimonio}>
@@ -92,7 +92,7 @@ const Testimonios = () => {
                             </p>
                         </div>
                         <p className={styles.testAutor}>
-                            Johan Mitma, amigo de Angie Abanto
+                            Johan Mitma, tutor de la plataforma
                         </p>
                     </div>
                 </div>
