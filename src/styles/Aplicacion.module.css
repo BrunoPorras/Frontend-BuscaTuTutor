@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+
+.tituloBienvenida {
+    width: 100%;
+    padding: 11px;    
+    display: grid; 
+    grid-template-columns: 3fr 7fr 3fr;
+    
+}
+
+.itemBienvenida {
+    
+    justify-self: center;
+    align-self: center;
+    
+}
+
+
+.textContainer {
+    width: 80%;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 800;
+    padding-top: 50px;
+}

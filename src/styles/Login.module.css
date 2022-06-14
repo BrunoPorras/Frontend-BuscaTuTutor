@@ -1,7 +1,7 @@
 .contenedorUno {
     
-    /*height: 79.5vh;*/
-    height: 85.1vh;
+    /*height: 79.5 -- 85.1 vh;*/
+    height: 89.8vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -47,6 +47,12 @@
     margin-bottom: 50px;
     outline: none;
 }
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    -webkit-text-fill-color: #FFF;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
 .botonLogin {
     font-size: 17px;

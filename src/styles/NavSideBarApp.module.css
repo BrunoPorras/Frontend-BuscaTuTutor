@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.logoApp {
+    height: 80px;
+}
+
+.navbar {    
+    background-color:#FFF; 
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #c4ccde;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonesNav{
+    
+    
+}
+
+.botonesNav button{    
+    width: 150px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+    border-left:  1px solid #c4ccde;
+    
+}
+
+
+
+.contenedorSide{
+    display: flex;
+}
+
+.sidebar {
+    background-color: rgb(18, 34, 104);    
+    color: #FFF;
+    width: 14rem;
+    /*height: calc(100vh - 52px);*/
+    min-height: calc(100vh - 70px);
+    height: 100%;
+    transition: all 0.5s;
+    border-right: 1px solid  #c4ccde;
+}
+
+.top_sectionSlide {
+    display: flex;
+    align-items:center;
+    padding:20px 15px;
+}
+
+.logoSide{
+    font-size: 30px;
+}
+
+.barsSide{
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+}
+
+.correoSide {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(52, 75, 180);
+}
+
+
+.linkSide{
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+.linkSide:hover{
+    background:lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+}
+.activeSide{
+    background: lightskyblue;
+    color: #000;
+}
+
+.linkTextSide{
+    text-decoration: none;
+}
+
+
+.iconSide, .linkTextSide{
+    font-size: 20px;
+}
+
+@media (max-width: 660px) {
+    .botonesNav button {
+        font-size: 13px;
+        width: 70px;
+        border: none;
+        outline:none;
+        border-left:  1px solid #c4ccde;
+        background-color: transparent;
+        vertical-align: middle;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .botonesNav button {
+        font-size: 10px;
+        width: 40px;
+        border: none;
+        outline:none;
+        border-left:  1px solid #c4ccde;
+        background-color: transparent;
+        
+    }
+  }

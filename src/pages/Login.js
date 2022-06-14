@@ -20,6 +20,24 @@ const Login = () => {
         })
     }
 
+    const iniciarApp = async () => {
+        let result = await handleSubmit();
+        if(result.Message == "Fail"){
+            alert('El usuario o la contraseña no son correctos');  
+        }
+        if(result.Message == "Success"){                        
+            //console.log("Exito");         
+            localStorage.setItem('id', result.Estudiante.id);
+            localStorage.setItem('nombre', result.Estudiante.nombre);
+            localStorage.setItem('correo', result.Estudiante.correo);
+            localStorage.setItem('num_telf', result.Estudiante.num_telf);
+            localStorage.setItem('es_tutor', result.Estudiante.es_tutor);
+            alert(`Bienvenido ${result.Estudiante.nombre}`);
+            window.location.href="./menu";
+        }        
+    }
+    
+
     //  Funcion para enviar los datos del formulario
     const handleSubmit = async() => {
         const result = await axios({
@@ -30,7 +48,8 @@ const Login = () => {
             },
             data: form
         })
-        console.log(result.data)
+        console.log(result.data);
+        return result.data;
     }
 
     return(
@@ -46,7 +65,7 @@ const Login = () => {
                     <label className={styles.labelLogin}>Ingresa tu contraseña</label>
                     <input className={styles.inputTanque} type="password" name="password" onChange={handleChange}></input>
                     <div className={styles.divbotonLogin}>
-                        <button className={styles.botonLogin} onClick={() => handleSubmit()}>Iniciar Sesión</button>
+                        <button className={styles.botonLogin} onClick={() => iniciarApp()}>Iniciar Sesión</button>
                     </div>
                 </div>
                 <div className={styles.contenedorUnoB}>
