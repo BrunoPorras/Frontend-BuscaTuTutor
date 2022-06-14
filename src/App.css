@@ -16,6 +16,11 @@
     --verde-inicio: #39C12D;
     --rojo-inicio: #C1362D;
     --naranja-text: #F87A06;
+    --search-back: #2E3C4F;
+    --gris-search: #F0F0F0;
+    --content-gris: #7E7E7E;
+    --contactar: #0096B2;
+    --near_white: #F7F5F2;
 }
 body {
     color: #000;
