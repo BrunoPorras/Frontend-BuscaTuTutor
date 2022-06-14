@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Menu from './pages/Menu';
+import Demo from './pages/Demo';
 
 const App = () => {
 
@@ -14,12 +15,11 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="" element={<Home/>}/>
-                <Route path="demo" element={<Demo/>}/>
                 <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
+                <Route path="demo" element={<Demo/>}/>
                 <Route path="menu" element={<Menu/>}/>                
                 <Route path="*" element={<NotFound/>}/>
-
             </Routes>
         </BrowserRouter>
     );
