@@ -1,0 +1,213 @@
+.searchContainer {
+    position: relative;
+    background: var(--search-back);
+    border-radius: 100px;
+    padding: 50px 30px 30px 30px;
+}
+.searchContainer > p {
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    transform: rotate(-1.5deg);
+    background: #FFF;
+    color: var(--search-back);
+    font-size: 30px;
+    font-weight: 500;
+    width: 100%;
+    padding: 10px;
+}
+.searchItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 20px;
+    border-radius: 20px;
+    background: #FFF;
+}
+.searchItem {
+    background: var(--gris-search);
+    min-width: 200px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    flex: 1;
+}
+.searchItem > p {
+    color: var(--search-back);
+    font-size: 13px;
+    margin: 0 0 5px 5px;
+}
+.searchIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #FFF;
+}
+.searchIcon > input {
+    width: 100%;
+    background: #FFF;
+    outline: none;
+    border: none;
+}
+.icon {
+    color: var(--search-back);
+    font-size: 15px;
+}
+.selectSearch {
+    width: 100%;
+    background: #FFF;
+    outline: none;
+    border: none;
+}
+
+/*Cards*/
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 230px;
+    margin: 10px 0;
+}
+.card > img {
+    width: 70px;
+}
+.card > p {
+    text-align: center;
+}
+
+/*Lista de tutores*/
+.listContainer {
+    padding: 0 30px;
+}
+.listItem {
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+.itemImg > img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+}
+.itemText {
+    display: inline;
+    padding: 0 10px;
+    flex: 1 1 50%;
+}
+.itemText > h3 {
+    font-size: 20px;
+}
+.textHab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--content-gris);
+    font-size: 13px;
+    font-weight: 300;
+}
+.textHab > p {
+    margin: 2px 5px;
+}
+.itemText > p {
+    color: var(--content-gris);
+    font-size: 13px;
+    font-weight: 300;
+}
+
+@media (min-width: 950px) {
+    .itemBtns {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 100%;
+    max-width: 175px;
+    }
+    .contactar {
+        width: 90%;
+    }
+    .vermas {
+        width: 90%;
+    }
+}
+
+@media (max-width: 950px) {
+    .itemBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .contactar {
+        flex: 1;
+    }
+    .vermas {
+        flex: 1;
+    }
+}
+
+.contactar {
+    margin: 10px;
+    width: 90%;
+    text-decoration: none;
+    color: #FFF;
+    background: var(--contactar);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+}
+.vermas {
+    margin: 10px;
+    width: 90%;
+    text-decoration: none;
+    color: var(--content-gris);
+    background: var(--near_white);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+}
+.containerTutores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.changePage {
+    background: var(--contactar);
+    font-size: 18px;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 3px;
+}
+.changePage:hover {
+    background: var(--contactar);
+    cursor: pointer;
+}
