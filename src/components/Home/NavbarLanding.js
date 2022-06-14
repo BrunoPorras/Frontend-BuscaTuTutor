@@ -40,13 +40,13 @@ const NavbarLanding = ({ demoMode = false }) => {
                             </>
                         ) : (
                             <>
-                                <ScrollLink className={styles.menuItem} to="inicio" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenuOpen}>
+                                <ScrollLink className={styles.menuItem} to="inicio" spy={true} smooth={false} offset={-100} duration={1000} onClick={closeMenuOpen}>
                                     Inicio
                                 </ScrollLink>
-                                <ScrollLink className={styles.menuItem} to="que" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenuOpen}>
+                                <ScrollLink className={styles.menuItem} to="que" spy={true} smooth={false} offset={-80} duration={1000} onClick={closeMenuOpen}>
                                     ¿Qué hacemos?
                                 </ScrollLink>
-                                <ScrollLink className={styles.menuItem} to="test" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenuOpen}>
+                                <ScrollLink className={styles.menuItem} to="test" spy={true} smooth={false} offset={-80} duration={1000} onClick={closeMenuOpen}>
                                     Testimonios
                                 </ScrollLink>
                                 <Link to='/demo' className={styles.verTutor}>
