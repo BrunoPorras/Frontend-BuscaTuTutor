@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -13,9 +13,20 @@ import { ModalDemo } from '../Modal/Modals'
 import useModal from '../../hooks/useModal'
 import perfil from '../../assets/Demo/perfil1.PNG'
 
-const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage }) => {
+const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = true }) => {
+
+    const navigate = useNavigate()
 
     const [isOpenModal, openModal, closeModal] = useModal()
+
+    const isDemo = ( option ) => {
+        if (demoMode === true) {
+            isOpenModal ? closeModal() : openModal()
+        } else {
+            //  Para enviar a contactar o al perfil del tutor - AÑADIR
+            //option === 'contacto' ? navigate() : navigate('')
+        }
+    }
 
     if(loading) {
         return(
@@ -50,12 +61,12 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
     } else {
         return(
             <>
-            <AnimatePresence
-                initial={false}
-                exitBeforeEnter={true}
-                onExitComplete={() => null}>
-                { isOpenModal && <ModalDemo closeModal={closeModal}/>}
-            </AnimatePresence>
+                <AnimatePresence
+                    initial={false}
+                    exitBeforeEnter={true}
+                    onExitComplete={() => null}>
+                    { isOpenModal && <ModalDemo closeModal={closeModal}/>}
+                </AnimatePresence>
                 <div className={styles.listContainer}>
                     {
                         data.map(item => (
@@ -84,10 +95,10 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                     </p>
                                 </div>
                                 <div className={styles.itemBtns}>
-                                    <div className={styles.contactar} onClick={() => (isOpenModal ? closeModal() : openModal())}>
+                                    <div className={styles.contactar} onClick={() => isDemo('contacto')}>
                                         CONTACTAR
                                     </div>
-                                    <div className={styles.vermas} onClick={() => (isOpenModal ? closeModal() : openModal())}>
+                                    <div className={styles.vermas} onClick={() => isDemo('verMas')}>
                                         VER MAS
                                     </div>
                                 </div>
@@ -102,7 +113,6 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                     currentPage={currentPage}
                 />
             </>
-            
         )
     }
 }
