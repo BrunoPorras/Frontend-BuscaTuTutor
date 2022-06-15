@@ -1,0 +1,42 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: #000000c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_container {
+    width: clamp(30%, 700px, 300px);
+    margin: auto;
+    border-radius: 5px;
+    background: #FFF;
+}
+.modal_container > p {
+    padding: 0 30px 30px 30px;
+}
+.modal_form {
+    width: clamp(30%, 700px, 80%);
+    height: 85%;
+    margin: auto;
+    border-radius: 5px;
+    background: #FFF;
+    overflow-y: scroll;
+}
+.modal_head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+.modal_close {
+    height: 18px;
+    color: var(--card_tittle);
+    cursor: pointer;
+}
