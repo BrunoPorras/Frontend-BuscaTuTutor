@@ -69,18 +69,6 @@ const ContenidoInicio = () => {
         setTotalPages(calcPages(filterData.length, pageSize))
     }, [filterData])
 
-    const countTutors = () => {
-        if(loading){
-            return(
-                <Skeleton width={200}/>
-            )
-        } else {
-            return(
-                <>{filterData.length} tutores disponibles</>
-            )
-        }
-    }
-
     return (
         <div>
             <TituloBienvenida/>            
@@ -100,6 +88,7 @@ const ContenidoInicio = () => {
                             prevPage={prevPage}
                             totalPages={totalPages}
                             currentPage={currentPage}
+                            demoMode={false}
                         />
                     </div>
                     
