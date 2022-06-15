@@ -1,41 +1,44 @@
-import React from "react";
-import * as FaIcons from 'react-icons/fa'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+    faHome, faUser, faStar, faCalendarDays,
+    faMagnifyingGlass, faUserGraduate, faReceipt
+} from '@fortawesome/free-solid-svg-icons'
 
 export const SidebarData = [
 
     {
         title: "Inicio",
-        icon: <FaIcons.FaHome className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faHome}/>,
         link: "/inicio"
     }, 
     {
         title: "Mi Perfil",
-        icon: <FaIcons.FaUserAlt className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faUser}/>,
         link: "/miperfil"
     }, 
     {
         title: "Mis favoritos",
-        icon: <FaIcons.FaStar className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faStar}/>,
         link: "/misfavoritos"
     }, 
     {
         title: "Mis clases",
-        icon: <FaIcons.FaRegCalendarAlt className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faCalendarDays}/>,
         link: "/misclases"
     }, 
     {
         title: "Buscar tutor",
-        icon: <FaIcons.FaSearch className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faMagnifyingGlass}/>,
         link: "/buscar"
     }, 
     {
         title: "Ser un tutor",
-        icon: <FaIcons.FaUserGraduate className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faUserGraduate}/>,
         link: "/upgrade"
     }, 
     {
         title: "Historial de pagos",
-        icon: <FaIcons.FaReceipt className="me-2"/>,
+        icon: <FontAwesomeIcon icon={faReceipt}/>,
         link: "/pagos"
     }
 ]

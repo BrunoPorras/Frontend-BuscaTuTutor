@@ -1,11 +1,15 @@
 import styles from '../../styles/NavSideBarApp.module.css';
 import logo from '../../assets/Landing page/logo.png'
+import { useNavigate } from 'react-router-dom';
 
 const NavbarApp = () => {
 
+    //  Hook para navegar a otras paginas
+    const navigate = useNavigate()
+
     const cerrarSesion=()=>{
-        localStorage.clear();
-        window.location.href="./login";
+        localStorage.clear()
+        navigate("/login")
     }
 
     var nombre = localStorage.getItem("nombre").split(" ")[0];
