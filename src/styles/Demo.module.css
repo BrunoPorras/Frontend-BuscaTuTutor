@@ -163,7 +163,9 @@
         flex: 1;
     }
 }
-
+.itemBtns > div:hover {
+    cursor: pointer;
+}
 .contactar {
     margin: 10px;
     width: 90%;
