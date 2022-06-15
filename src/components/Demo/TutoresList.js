@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
+import { AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGraduate, faBook } from '@fortawesome/free-solid-svg-icons'
 import styles from '../../styles/Demo.module.css'
 
 import { PageControllers } from './PageControllers'
+import { ModalDemo } from '../Modal/Modals'
+import useModal from '../../hooks/useModal'
 import perfil from '../../assets/Demo/perfil1.PNG'
 
 const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage }) => {
+
+    const [isOpenModal, openModal, closeModal] = useModal()
 
     if(loading) {
         return(
@@ -45,6 +50,12 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
     } else {
         return(
             <>
+            <AnimatePresence
+                initial={false}
+                exitBeforeEnter={true}
+                onExitComplete={() => null}>
+                { isOpenModal && <ModalDemo closeModal={closeModal}/>}
+            </AnimatePresence>
                 <div className={styles.listContainer}>
                     {
                         data.map(item => (
@@ -73,12 +84,12 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                     </p>
                                 </div>
                                 <div className={styles.itemBtns}>
-                                    <Link to='' className={styles.contactar}>
+                                    <div className={styles.contactar} onClick={() => (isOpenModal ? closeModal() : openModal())}>
                                         CONTACTAR
-                                    </Link>
-                                    <Link to='' className={styles.vermas}>
+                                    </div>
+                                    <div className={styles.vermas} onClick={() => (isOpenModal ? closeModal() : openModal())}>
                                         VER MAS
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
                         ))
