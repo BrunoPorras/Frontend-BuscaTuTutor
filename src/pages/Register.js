@@ -50,7 +50,7 @@ const Register = () => {
 
     return (
         <div>
-            <Header/>
+            <Header login={false}/>
             <div className={styles.contenedorUno} >
                 <div className={styles.contenedorUnoB}>
                     <img src={merchLaptop} alt="Imagen" />

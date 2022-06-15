@@ -4,10 +4,14 @@ import Header from '../components/Login/Header';
 import styles from '../styles/Login.module.css';
 import { Footer } from "../components/Home/Portada"
 import merchLaptop from '../assets/Landing page/merchLaptop.png'
+import { useNavigate } from 'react-router-dom';
 
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/login";
 
 const Login = () => {
+
+    //  Hook para navegar a otras paginas
+    const navigate = useNavigate()
 
     //  Campos del login
     const [form, setform] = useState({ correo: '', password: '' })
@@ -21,25 +25,24 @@ const Login = () => {
     }
 
     const iniciarApp = async () => {
-        let result = await handleSubmit();
-        if(result.Message == "Fail"){
+        const result = await handleSubmit();
+        if(result.Message === "Fail"){
             alert('El usuario o la contraseña no son correctos');  
-        }
-        if(result.Message == "Success"){                        
-            //console.log("Exito");         
+        } else if(result.Message === "Success"){                        
+            localStorage.setItem('token', result.token)
+            navigate('/menu')
+            //  Esto no se debe usar
             localStorage.setItem('id', result.Estudiante.id);
             localStorage.setItem('nombre', result.Estudiante.nombre);
             localStorage.setItem('correo', result.Estudiante.correo);
             localStorage.setItem('num_telf', result.Estudiante.num_telf);
             localStorage.setItem('es_tutor', result.Estudiante.es_tutor);
-            alert(`Bienvenido ${result.Estudiante.nombre}`);
-            window.location.href="./menu";
-        }        
+        }
     }
     
 
     //  Funcion para enviar los datos del formulario
-    const handleSubmit = async() => {
+    const handleSubmit = async () => {
         const result = await axios({
             method: 'POST',
             url: baseUrl,
@@ -48,13 +51,12 @@ const Login = () => {
             },
             data: form
         })
-        console.log(result.data);
         return result.data;
     }
 
     return(
         <div>
-            <Header/>
+            <Header login={true}/>
             <div className={styles.contenedorUno} >
                 <div className={styles.contenedorUnoA}>
                     <h3 className={styles.tituloLogin}>INICIAR SESION</h3>
