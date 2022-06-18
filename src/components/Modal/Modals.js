@@ -61,4 +61,20 @@ const ModalDemo = ({ closeModal }) => {
     )
 }
 
-export { ModalDemo }
+const ModalWithContent = ({ closeModal, children }) => {
+
+    return(
+        <Backdrop onClick={closeModal}>
+            <motion.div className={styles.modal_container}
+            onClick={(e) => e.stopPropagation()}
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit">
+                {children}
+            </motion.div>
+        </Backdrop>
+    )
+}
+
+export { ModalDemo, ModalWithContent }
