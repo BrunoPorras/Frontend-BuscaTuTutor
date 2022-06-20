@@ -11,7 +11,14 @@ body{
 }
 
 .flex {
-    display: flex;
+    display: flex;   
+    /*Aquí pones el color de la aplicacion colorcito*/  
+    background-color: var(--gris-search);
+}
+
+.contenidoApp {
+    /*Le doy todo el ancho a lo que no sea sidebar*/
+    width: 100%;    
 }
 
 .logoApp {

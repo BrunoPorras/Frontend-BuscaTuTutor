@@ -9,7 +9,7 @@ export const SidebarData = [
     {
         title: "Inicio",
         icon: <FontAwesomeIcon icon={faHome}/>,
-        link: "/inicio"
+        link: "/menu"
     }, 
     {
         title: "Mi Perfil",

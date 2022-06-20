@@ -25,3 +25,147 @@
     font-weight: 800;
     padding-top: 50px;
 }
+
+
+.Datos {    
+    min-height: calc(100vh - 70px);
+    margin-bottom: 30px;
+}
+
+.DatosCabecera {    
+    height:fit-content;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding-left: 10px;
+}
+
+.DatosCabecera h1 {
+    display: inline;
+    font-size: 50px;    
+}
+
+.DatosCabecera button {    
+    background-color: rgb(51, 122, 183);
+    color: #FFF;
+    font-size: 20px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+.DatosBody {        
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: cornflowerblue;
+    grid-area: main;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.DatosBody img {
+    width: 300px;
+    height: 300px;
+}
+
+.tituloSeccion{
+    width: 100%;
+    color: #FFF;
+    font-style: italic;
+    margin-bottom: 20px;    
+}
+
+.DatosItems {
+    padding: 15px;    
+    width: 50%;
+}
+
+.DatosItems2 {
+    padding: 15px;    
+    width: 85%;
+}
+
+.EsHa {    
+    display: inline-flex;
+    min-width: 120px;    
+    margin: 2px 10px;
+    padding: 2px 10px;
+    justify-content: center;    
+    background-color: rgb(18, 34, 104);
+    border-radius: 20px;
+}
+
+.ContEsHa {    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.DatoItem input {
+    background-color: transparent;
+    border: none;
+    display: block;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 100%;    
+    font-size: 17px;
+    margin: 15px;
+    color: #FFF;
+    margin-bottom: 30px;
+    outline: none;    
+}
+
+.DatoItem p {
+    background-color: transparent;
+    border: none;
+    display: block;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 100%;    
+    font-size: 17px;
+    margin: 15px;
+    color: #FFF;
+    margin-bottom: 30px;
+    outline: none;    
+}
+
+.DatoItem {
+    font-size: 17px;
+    color: #FFF;
+    
+}
+
+.DatoItem label {
+    margin-left: 10px;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    -webkit-text-fill-color: #FFF;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+
+@media (max-width: 660px) {
+    .DatosCabecera h1 {
+        font-size: 30px;    
+    }
+    
+    .DatosCabecera button {        
+        font-size: 15px;
+        padding: 5px 30px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .DatosBody img {        
+        width: 100%;
+        display: block;
+    }
+    
+
+}
