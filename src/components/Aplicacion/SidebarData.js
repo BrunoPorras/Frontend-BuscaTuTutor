@@ -34,7 +34,7 @@ export const SidebarData = [
     {
         title: "Ser un tutor",
         icon: <FontAwesomeIcon icon={faUserGraduate}/>,
-        link: "/upgrade"
+        link: "/sertutor"
     }, 
     {
         title: "Historial de pagos",
