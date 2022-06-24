@@ -21,6 +21,8 @@
     --content-gris: #7E7E7E;
     --contactar: #0096B2;
     --near_white: #F7F5F2;
+    --btn_blue: #2196f3;
+    --btn_blue_hover: #1d87de;
 }
 body {
     color: #000;
