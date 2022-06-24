@@ -134,11 +134,11 @@
 @media (min-width: 950px) {
     .itemBtns {
         display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1 1 100%;
-    max-width: 175px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 100%;
+        max-width: 175px;
     }
     .contactar {
         width: 90%;
