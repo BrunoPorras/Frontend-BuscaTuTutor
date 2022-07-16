@@ -7,15 +7,15 @@ import merchLaptop from '../assets/Landing page/merchLaptop.png'
 import { useNavigate } from 'react-router-dom';
 
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/login";
-
+const urlObtenerTutor = "https://buscatututorbackend.herokuapp.com/api/getTutor";
 const urlTodosLosTutores = "https://buscatututorbackend.herokuapp.com/api/getTutores";
 
 const Login = () => {
 
+    var urlFinal = urlObtenerTutor + "?id=";
+
     //  Hook para navegar a otras paginas
     const navigate = useNavigate()
-
-    const [tutores, setTutores] = useState({});
 
     //  Campos del login
     const [form, setform] = useState({ correo: '', password: '' })
@@ -28,49 +28,47 @@ const Login = () => {
         })
     }
 
-    const iniciarApp = async () => {
+    async function guardarDatosFacade (objeto) {
+        guardarDatosEstudiante(objeto);        
+        if(objeto.es_tutor){            
+            guardarDatosTutor(objeto);
+        }        
+    }
+
+    function guardarDatosEstudiante (objeto) {
+        localStorage.setItem('id', objeto.id);
+        localStorage.setItem('nombre', objeto.nombre);
+        localStorage.setItem('correo', objeto.correo);
+        localStorage.setItem('num_telf', objeto.num_telf);
+        localStorage.setItem('es_tutor', objeto.es_tutor);
+    }
+
+    async function guardarDatosTutor (objeto) {  
+        urlFinal = urlFinal + objeto.id;
+        const tutor = await obtenerTutor();
+        localStorage.setItem('id_tutor', tutor.id);
+        localStorage.setItem('descripcion', tutor.descripcion);
+    }
+
+    const iniciarApp = async () => {        
         const result = await handleSubmit();
         if(result.Message === "Fail"){
             alert('El usuario o la contraseña no son correctos');  
         } else if(result.Message === "Success"){
             localStorage.setItem('token', result.token)
             navigate('/menu')
-            //  Esto no se debe usar
-            localStorage.setItem('id', result.Estudiante.id);
-            localStorage.setItem('nombre', result.Estudiante.nombre);
-            localStorage.setItem('correo', result.Estudiante.correo);
-            localStorage.setItem('num_telf', result.Estudiante.num_telf);
-            localStorage.setItem('es_tutor', result.Estudiante.es_tutor);
-            if(localStorage.getItem('es_tutor') == 'true'){    
-                /*SI ES QUE ES TUTOR VA A GUARDAR ALGUNOS DATOS EXTRA*/            
-                const AllTutores = await obtenerIDTutor();                
-                AllTutores.map((tut)=> {
-                    if(tut.id == localStorage.getItem("id")){                        
-                        /*Encuentro el tutor*/
-                        localStorage.setItem('id_tutor', tut.tutor[0].id);
-                        localStorage.setItem('descripcion', tut.tutor[0].descripcion);
-                        localStorage.setItem('num_especialidades',tut.tutor[0].especialidades.length);
-                        localStorage.setItem('num_habilidades',tut.tutor[0].habilidades.length);
-                        for(let i= 0; i<tut.tutor[0].habilidades.length; i++){
-                            localStorage.setItem('habilidad'+(i+1), tut.tutor[0].habilidades[i].desc_esp);
-                        }
-                        for(let j= 0; j<tut.tutor[0].especialidades.length; j++){
-                            localStorage.setItem('especialidad'+(j+1), tut.tutor[0].especialidades[j].desc_esp);
-                        }
-                    }                    
-                })                
-            }
-            
+            guardarDatosFacade(result.Estudiante);
         }
     }
 
     //  Funcion para enviar obtener su id de tutor
-    const obtenerIDTutor = async () => {
+    const obtenerTutor = async () => {
         const result = await axios({
             method: 'GET',
-            url: urlTodosLosTutores,
+            url: urlFinal,
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",                
+                "Authorization": localStorage.getItem("token")
             }
         })
         return result.data;

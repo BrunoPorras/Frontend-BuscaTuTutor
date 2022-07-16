@@ -10,6 +10,7 @@ import SerTutor from './pages/SerTutor';
 import Demo from './pages/Demo';
 import AppPrincipal from './pages/AppPrincipal';
 import MiPerfil from './pages/AppMiPerfil';
+import VerMasTutor from './pages/AppVerMasTutor';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="menu" element={<AppPrincipal/>}/>
                 <Route path="miperfil" element={<MiPerfil/>}/>
                 <Route path="sertutor" element={<SerTutor/>}/>
+                <Route path="vermas" element={<VerMasTutor/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>

@@ -26,8 +26,9 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
         if (demoMode === true) {
             isOpenModal ? closeModal() : openModal()
         } else {
-            //  Para enviar a contactar o al perfil del tutor - POR REVISAR
-            option === 1 ? window.location(wsp(extra)) : navigate('')
+            localStorage.removeItem('idUltimaConsulta');
+            localStorage.setItem('idUltimaConsulta', extra);
+            option === 1 ? window.location(wsp(extra)) : navigate('/vermas')            
         }
     }
     

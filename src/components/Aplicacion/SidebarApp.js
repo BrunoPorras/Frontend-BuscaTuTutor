@@ -58,6 +58,14 @@ const SidebarApp = () => {
                             </NavLink>
                         )
                     }
+                }).filter((aux)=>{
+                    var x = localStorage.getItem("es_tutor");
+                    if(x === "true" && aux.key != 5){                        
+                        return aux;                        
+                    }
+                    if(x === "false" && aux.key != 6){                        
+                        return aux;                        
+                    }
                 })}
             </div>
         </div>
