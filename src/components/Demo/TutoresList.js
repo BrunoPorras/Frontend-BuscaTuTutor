@@ -13,18 +13,21 @@ import { ModalDemo } from '../Modal/Modals'
 import useModal from '../../hooks/useModal'
 import perfil from '../../assets/Demo/perfil1.PNG'
 
+//  Helpers
+import { wsp } from '../../helpers/whatsapp'
+
 const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = true }) => {
 
     const navigate = useNavigate()
 
     const [isOpenModal, openModal, closeModal] = useModal()
 
-    const isDemo = ( option ) => {
+    const isDemo = (option, extra) => {
         if (demoMode === true) {
             isOpenModal ? closeModal() : openModal()
         } else {
-            //  Para enviar a contactar o al perfil del tutor - AÑADIR
-            //option === 'contacto' ? navigate() : navigate('')
+            //  Para enviar a contactar o al perfil del tutor - POR REVISAR
+            option === 1 ? window.location(wsp(extra)) : navigate('')
         }
     }
 
@@ -95,10 +98,10 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                     </p>
                                 </div>
                                 <div className={styles.itemBtns}>
-                                    <div className={styles.contactar} onClick={() => isDemo('contacto')}>
+                                    <div className={styles.contactar} onClick={() => isDemo(1, item.num_telf)}>
                                         CONTACTAR
                                     </div>
-                                    <div className={styles.vermas} onClick={() => isDemo('verMas')}>
+                                    <div className={styles.vermas} onClick={() => isDemo(2, item.id)}>
                                         VER MAS
                                     </div>
                                 </div>
