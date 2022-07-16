@@ -82,10 +82,6 @@ const ModalTerms = ({ closeModal }) => {
 
     const navigate = useNavigate()
 
-    const aceptarTerminos = () => {
-        navigate('./sertutor')
-    }
-
     return (
         <Backdrop onClick={closeModal}>
             <motion.div className={styles.modal_container}
