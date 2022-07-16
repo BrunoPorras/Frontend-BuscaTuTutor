@@ -111,9 +111,6 @@
     padding: 0 10px;
     flex: 1 1 50%;
 }
-.itemText > h3 {
-    font-size: 20px;
-}
 .textHab {
     display: flex;
     flex-direction: row;
@@ -211,5 +208,23 @@
 }
 .changePage:hover {
     background: var(--contactar);
+    cursor: pointer;
+}
+.itemName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.itemName > h3 {
+    margin: 0;
+    font-size: 20px;
+}
+.heart {
+    margin-left: 10px;
+    font-size: 20px;
+    color: rgb(243, 114, 114);
+}
+.heart:hover {
     cursor: pointer;
 }
