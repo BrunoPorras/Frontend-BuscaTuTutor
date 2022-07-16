@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 import { AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserGraduate, faBook } from '@fortawesome/free-solid-svg-icons'
+import { faUserGraduate, faBook, faHeart, faV } from '@fortawesome/free-solid-svg-icons'
 import styles from '../../styles/Demo.module.css'
 
 import { PageControllers } from './PageControllers'
@@ -28,6 +28,14 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
         } else {
             //  Para enviar a contactar o al perfil del tutor - POR REVISAR
             option === 1 ? window.location(wsp(extra)) : navigate('')
+        }
+    }
+    
+    const fav = () => {
+        if (demoMode === true) {
+            isOpenModal ? closeModal() : openModal()
+        } else {
+            //  Intentar convertir en favorito o no
         }
     }
 
@@ -78,7 +86,10 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                     <img src={perfil} alt="Foto de perfil" />
                                 </div>
                                 <div className={styles.itemText}>
-                                    <h3>{item.nombre}</h3>
+                                    <div className={styles.itemName}>
+                                        <h3>{item.nombre}</h3>
+                                        <FontAwesomeIcon className={styles.heart} icon={faHeart} onClick={() => fav()}/>
+                                    </div>
                                     <div className={styles.textHab}>
                                         <FontAwesomeIcon icon={faUserGraduate}/>
                                         <p>4 estudiantes se contactaron con este tutor</p>
