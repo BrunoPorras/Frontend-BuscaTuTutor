@@ -5,7 +5,7 @@ import SidebarApp from '../components/Aplicacion/SidebarApp';
 import ContenidoInicio from '../components/Aplicacion/ContenidoInicio';
 
 
-const AppPrincipal = () => {
+const MisFavoritos = () => {
 
 
     function comprobarLogueo() {        
@@ -21,11 +21,11 @@ const AppPrincipal = () => {
             <div className={styles.flex}>
                 <SidebarApp/>
                 <div className={styles.contenidoApp}>                        
-                    <ContenidoInicio mode="normal"/>    
+                    <ContenidoInicio mode="favorito"/>    
                 </div>
             </div>
         </div>
     )
 }
 
-export default AppPrincipal
+export default MisFavoritos

@@ -16,7 +16,7 @@ import perfil from '../../assets/Demo/perfil1.PNG'
 //  Helpers
 import { wsp } from '../../helpers/whatsapp'
 
-const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false }) => {
+const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false, mode }) => {
 
     const navigate = useNavigate()
 
@@ -62,7 +62,7 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                 </div>
             </div>
         )
-    } else {
+    } else if(mode == "normal"){
         return(
             <>
                 <AnimatePresence
@@ -105,6 +105,64 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                         CONTACTAR
                                     </div>
                                     <div className={styles.vermas} onClick={() => isDemo(2, item.id)}>
+                                        VER MAS
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <PageControllers
+                    prevPage={prevPage}
+                    nextPage={nextPage}
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                />
+            </>
+        )
+    } else {
+        return(
+            <>
+                <AnimatePresence
+                    initial={false}
+                    exitBeforeEnter={true}
+                    onExitComplete={() => null}>
+                    { isOpenModal && <ModalDemo closeModal={closeModal}/>}
+                </AnimatePresence>
+                <div className={styles.listContainer}>
+                    {
+                        data.map(item => (
+                            <div className={styles.listItem} key={item.id}>
+                                <div className={styles.itemImg}>
+                                    <img src={perfil} alt="Foto de perfil" />
+                                </div>
+                                <div className={styles.itemText}>
+                                    <div className={styles.itemName}>
+                                        <h3>{item.tutor.estudiante.nombre}</h3>
+                                    </div>
+                                    <div className={styles.textHab}>
+                                        <FontAwesomeIcon icon={faUserGraduate}/>
+                                        <p>4 estudiantes se contactaron con este tutor</p>
+                                    </div>
+                                    <div className={styles.textHab}>
+                                        <FontAwesomeIcon icon={faBook}/>
+                                        <p>
+                                            {
+                                                item.tutor.especialidades.map(esp => (
+                                                    `${esp.desc_esp} `
+                                                    ))
+                                                }
+                                        </p>
+                                    </div>
+                                    <p>
+                                        {item.tutor.descripcion}
+                                    </p>
+                                </div>
+                                <div className={styles.itemBtns}>
+                                    <div className={styles.contactar} onClick={() => isDemo(1, item.tutor.estudiante.num_telf)}>
+                                        CONTACTAR
+                                    </div>
+                                    <div className={styles.vermas} onClick={() => isDemo(2, item.tutor.estudiante.id)}>
                                         VER MAS
                                     </div>
                                 </div>

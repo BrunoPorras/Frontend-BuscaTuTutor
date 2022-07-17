@@ -4,7 +4,6 @@ import TituloBienvenida from './TituloBienvenida';
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
@@ -18,8 +17,8 @@ import styles from '../../styles/DemoContainer.module.css'
 
 const pageSize = 5;
 
-const ContenidoInicio = () => {
-    
+const ContenidoInicio = ({ mode = "normal" }) => {
+
     //  Hook para la paginación
     const [currentPage, nextPage, prevPage, setPage] = usePagination()
 
@@ -36,17 +35,30 @@ const ContenidoInicio = () => {
     const [totalPages, setTotalPages] = useState(1)
     const [min, setMin] = useState(0)
     const [max, setMax] = useState(0)
-    
+
     //  Método para obtener la lista de tutores
     const getData = async () => {
         if (loading) {
-            const response = await axios({
-                method: 'GET',
-                url: 'https://buscatututorbackend.herokuapp.com/api/getTutores'
-            })
-            setdata(response.data)
-            setFilterData(response.data)
-            setLoading(false)
+            if(mode == "normal"){
+                const response = await axios({
+                    method: 'GET',
+                    url: 'https://buscatututorbackend.herokuapp.com/api/getTutores'
+                })
+                setdata(response.data)
+                setFilterData(response.data)
+                setLoading(false)
+            } else {
+                const response = await axios({
+                    method: 'GET',
+                    url: 'https://buscatututorbackend.herokuapp.com/api/getFavTutors',
+                    headers: {
+                        "Authorization": localStorage.getItem("token")
+                    }
+                })
+                setdata(response.data)
+                setFilterData(response.data)
+                setLoading(false)
+            }
         } else {
             if (search.length === 0) {
                 setFilterData(data)
@@ -71,8 +83,8 @@ const ContenidoInicio = () => {
 
     return (
         <div>
-            <TituloBienvenida/>            
-            
+            <TituloBienvenida />
+
             <div className={styles.bodyContainer}>
                 <p className={stylesApp.textContainer}>
                     Tutores recomendados en base a tu perfil
@@ -89,9 +101,10 @@ const ContenidoInicio = () => {
                             totalPages={totalPages}
                             currentPage={currentPage}
                             demoMode={false}
+                            mode={mode}
                         />
                     </div>
-                    
+
                 </div>
             </div>
         </div>
