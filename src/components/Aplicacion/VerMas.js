@@ -47,6 +47,7 @@ const VerMas = () => {
                 "Authorization": localStorage.getItem("token")
             }
         })
+        console.log(result.data)
         return result.data;
     }
 
@@ -62,7 +63,7 @@ const VerMas = () => {
                     "Authorization": localStorage.getItem("token")
                 },
                 data: {
-                    id: tutor.estudiante.id
+                    id: tutor.id
                 }
             })
             console.log("AÑADIDO A FAVORITOS")
@@ -76,7 +77,7 @@ const VerMas = () => {
                     "Authorization": localStorage.getItem("token")
                 },
                 data: {
-                    id: tutor.estudiante.id
+                    id: tutor.id
                 }
             })
             console.log("ELIMINADO DE FAVORITOS")
