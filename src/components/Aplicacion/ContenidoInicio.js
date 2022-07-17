@@ -55,6 +55,7 @@ const ContenidoInicio = ({ mode = "normal" }) => {
                         "Authorization": localStorage.getItem("token")
                     }
                 })
+                console.log(response)
                 setdata(response.data)
                 setFilterData(response.data)
                 setLoading(false)
