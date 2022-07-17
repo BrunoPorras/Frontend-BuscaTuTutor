@@ -8,6 +8,9 @@ import perfil from '../../assets/Demo/perfil1.PNG';
 
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/getTutor";
 
+const addTutor = "https://buscatututorbackend.herokuapp.com/api/registrarTutorFav"
+const dropTutor = "https://buscatututorbackend.herokuapp.com/api/deleteFavTutor"
+
 const VerMas = () => {    
 
     const urlFinal = baseUrl + "?id=" + localStorage.getItem("idUltimaConsulta");
@@ -32,7 +35,7 @@ const VerMas = () => {
             })
         }
         obtenerDatos();
-    });
+    }, []);
    
     //  Funcion para obtener todos los datos del tutor seleccionado a partir de su id general
     const peticionDatos = async () => {        
@@ -47,12 +50,47 @@ const VerMas = () => {
         return result.data;
     }
 
+    //  Manejador del botón de favorito
+    const handleFavorito = async () => {
+        if (tutor.favorito === 0) {
+            //  Significa que no está en su lista de favoritos
+            const result = await axios({
+                method: 'POST',
+                url: addTutor,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("token")
+                },
+                data: {
+                    id: tutor.estudiante.id
+                }
+            })
+            console.log("AÑADIDO A FAVORITOS")
+        } else {
+            //  Significa que sí está en su lista de favoritos
+            const result = await axios({
+                method: 'DELETE',
+                url: dropTutor,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("token")
+                },
+                data: {
+                    id: tutor.estudiante.id
+                }
+            })
+            console.log("ELIMINADO DE FAVORITOS")
+        }
+    }
 
     return(
         <div className={styles.Datos}>
             <div className={styles.DatosCabecera}>
                 <h2>Más datos sobre {TutorVisto.nombre}</h2>            
-                <button className={styles.botonEditarDatos} ><FontAwesomeIcon icon={faStar}/>Agregar a Favoritos</button>
+                <button className={styles.botonEditarDatos}  
+                onClick={() => handleFavorito()}>
+                    <FontAwesomeIcon icon={faStar}/>Agregar a Favoritos
+                </button>
             </div>
             <div className={styles.DatosBody}>
                 <h5 className={styles.tituloSeccion}>Datos personales</h5>                

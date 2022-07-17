@@ -7,8 +7,13 @@ import Imagen3 from '../../assets/Landing page/Imagen3.png'
 import total_users from '../../assets/Landing page/total_users.png'
 import icono_logro from '../../assets/Landing page/icono_logro.png'
 import chat from '../../assets/Landing page/chat.png'
-
+import { useEffect } from 'react'
 const Portada = () => {
+    
+    useEffect(()=>{
+        console.log("HOLA")
+    })
+
     return(        
         <div id='inicio' className={styles.portada}>
             <div className={styles.item}>            

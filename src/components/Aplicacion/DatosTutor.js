@@ -24,7 +24,7 @@ const DatosTutor = () => {
             })            
         }
         obtenerDatos();
-    });
+    }, []);
 
     //  Funcion para obtener todos los datos del tutor seleccionado a partir de su id general
     const peticionDatos = async () => {        

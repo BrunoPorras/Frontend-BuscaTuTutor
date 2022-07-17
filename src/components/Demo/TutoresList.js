@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 import { AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserGraduate, faBook, faHeart, faV } from '@fortawesome/free-solid-svg-icons'
+import { faUserGraduate, faBook } from '@fortawesome/free-solid-svg-icons'
 import styles from '../../styles/Demo.module.css'
 
 import { PageControllers } from './PageControllers'
@@ -16,7 +16,7 @@ import perfil from '../../assets/Demo/perfil1.PNG'
 //  Helpers
 import { wsp } from '../../helpers/whatsapp'
 
-const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = true }) => {
+const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false }) => {
 
     const navigate = useNavigate()
 
@@ -28,15 +28,7 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
         } else {
             localStorage.removeItem('idUltimaConsulta');
             localStorage.setItem('idUltimaConsulta', extra);
-            option === 1 ? window.location(wsp(extra)) : navigate('/vermas')            
-        }
-    }
-    
-    const fav = () => {
-        if (demoMode === true) {
-            isOpenModal ? closeModal() : openModal()
-        } else {
-            //  Intentar convertir en favorito o no
+            option === 1 ? window.open(wsp(extra), "Contacto") : navigate('/vermas')            
         }
     }
 
@@ -89,7 +81,6 @@ const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPag
                                 <div className={styles.itemText}>
                                     <div className={styles.itemName}>
                                         <h3>{item.nombre}</h3>
-                                        <FontAwesomeIcon className={styles.heart} icon={faHeart} onClick={() => fav()}/>
                                     </div>
                                     <div className={styles.textHab}>
                                         <FontAwesomeIcon icon={faUserGraduate}/>
