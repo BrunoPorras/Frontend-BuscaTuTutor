@@ -1,14 +1,12 @@
 import stylesApp from '../../styles/Aplicacion.module.css';
 import TituloBienvenida from './TituloBienvenida';
 
-
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-
 import TutoresList from "../../components/Demo/TutoresList"
-
+import { Search } from "../../components/Demo/Search"
 import usePagination from '../../hooks/usePagination'
 import { calcPages } from '../../helpers/calcPages'
 
@@ -17,7 +15,7 @@ import styles from '../../styles/DemoContainer.module.css'
 
 const pageSize = 5;
 
-const ContenidoInicio = ({ mode = "normal" }) => {
+const ContenidoInicio = ({ mode = "normal", searchMode = false}) => {
 
     //  Hook para la paginación
     const [currentPage, nextPage, prevPage, setPage] = usePagination()
@@ -82,10 +80,23 @@ const ContenidoInicio = ({ mode = "normal" }) => {
         setTotalPages(calcPages(filterData.length, pageSize))
     }, [filterData])
 
+
+
     return (
         <div>
             <TituloBienvenida />
-
+            {
+                searchMode && 
+                    <div className={styles.navContainer}>
+                        <Search
+                            search={search}
+                            setSearch={setSearch}
+                            restartPage={setPage}
+                            filter={filter}
+                            setFilter={setFilter}
+                        />
+                    </div>
+            }
             <div className={styles.bodyContainer}>
                 <p className={stylesApp.textContainer}>
                     Tutores recomendados en base a tu perfil

@@ -12,6 +12,7 @@ import AppPrincipal from './pages/AppPrincipal';
 import MiPerfil from './pages/AppMiPerfil';
 import VerMasTutor from './pages/AppVerMasTutor';
 import MisFavoritos from './pages/MisFavoritos';
+import AppBuscar from './pages/AppBuscar';
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="sertutor" element={<SerTutor/>}/>
                 <Route path="vermas" element={<VerMasTutor/>}/>
                 <Route path="misfavoritos" element={<MisFavoritos/>}/>
+                <Route path="buscar" element={<AppBuscar/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>
