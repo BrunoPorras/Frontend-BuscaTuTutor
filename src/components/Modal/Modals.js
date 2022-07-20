@@ -116,4 +116,32 @@ const ModalTerms = ({ closeModal }) => {
     )
 }
 
-export { ModalDemo, ModalWithContent, ModalTerms }
+const ModalFavorito = ({ closeModal, mensaje }) => {
+    const navigate = useNavigate()
+    return (
+        <Backdrop onClick={closeModal}>
+            <motion.div className={styles.modal_container}
+                onClick={(e) => e.stopPropagation()}
+                variants={dropIn}
+                initial="hidden"
+                animate="visible"
+                exit="exit">
+                <div className={styles.modal_head}>
+                    <h4>Tutores Favoritos</h4>
+                    <FontAwesomeIcon
+                        className={styles.modal_close}
+                        icon={faCircleXmark}
+                        onClick={closeModal} />
+                </div>
+                <p>
+                    {mensaje}
+                </p>
+                <div className={styles.modal_btn}>
+                    <button className={styles.btnaccept} onClick={() => navigate('/misfavoritos')}>Aceptar</button>                    
+                </div>
+            </motion.div>
+        </Backdrop>
+    )
+}
+
+export { ModalDemo, ModalWithContent, ModalTerms, ModalFavorito }

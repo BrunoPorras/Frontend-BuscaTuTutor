@@ -23,19 +23,19 @@ const BRANDS = {
   /**
      * Fábrica de tutores
    */
-class TutorFactory {
-    constructor() {
-        this.create = function (brand, id) {
-            switch (brand) {
-                case BRANDS.favorito:
-                    return new TutorFavorito(id);
-                case BRANDS.nofavorito:
-                    return new TutorNoFavorito(id);
-                default:
-                    break;
-            }
-        };
-    }
+function TutorFactory () {
+    
+    this.create = function (brand, id) {
+        switch (brand) {
+            case BRANDS.favorito:
+                return new TutorFavorito(id);
+            case BRANDS.nofavorito:
+                return new TutorNoFavorito(id);
+            default:
+                break;
+        }
+    };
+    
 }
 
 export default {TutorFactory, TutorFavorito, TutorNoFavorito}

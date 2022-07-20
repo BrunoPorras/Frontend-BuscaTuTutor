@@ -4,7 +4,12 @@ import styles from '../../styles/Aplicacion.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk, faUserAlt , faPen, faStar , faPhone, faUserGraduate, faChalkboardUser, faBookOpen} from '@fortawesome/free-solid-svg-icons'
 
+import { ModalFavorito } from '../Modal/Modals'
+import useModal from '../../hooks/useModal'
+import { AnimatePresence } from 'framer-motion'
+
 import perfil from '../../assets/Demo/perfil1.PNG';
+import TutoresFactory from '../Clases/TutoresFactory';
 
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/getTutor";
 
@@ -15,6 +20,8 @@ const VerMas = () => {
 
     const urlFinal = baseUrl + "?id=" + localStorage.getItem("idUltimaConsulta");
     const [tutor, setTutor] = useState({});
+
+    const [isOpenModal, openModal, closeModal] = useModal()
 
     /*DATOS DEL TUTOR*/
     const [TutorVisto, setTutorVisto] = useState({nombre: '', num_telf: '' , correo:''})
@@ -51,6 +58,10 @@ const VerMas = () => {
         return result.data;
     }
 
+    const mostrarModal = () => {        
+        isOpenModal ? closeModal() : openModal();
+    }
+
     //  Manejador del botón de favorito
     const handleFavorito = async () => {
         if (tutor.favorito === 0) {
@@ -65,8 +76,7 @@ const VerMas = () => {
                 data: {
                     id: tutor.id
                 }
-            })
-            console.log("AÑADIDO A FAVORITOS")
+            })            
         } else {
             //  Significa que sí está en su lista de favoritos
             const result = await axios({
@@ -79,18 +89,76 @@ const VerMas = () => {
                 data: {
                     id: tutor.id
                 }
-            })
-            console.log("ELIMINADO DE FAVORITOS")
+            })                     
+        }
+        mostrarModal();
+    }
+
+    var Factory = function () {
+        this.createTutor = function (type) {
+            var tutor = "";
+    
+            if (type === "Favorito") {
+                tutor = new Fav();
+            } else if (type === "No Favorito") {
+                tutor = new NoFav();
+            }
+            tutor.type = type;
+            return tutor;
         }
     }
+    
+    var Fav = function () {
+        this.etiqueta = 'Eliminar de Favoritos';
+        this.modal = 'Este tutor ha sido eliminado de su lista de tutores favoritos';
+    };
+    
+    var NoFav = function () {
+        this.etiqueta = 'Agregar a Favoritos';
+        this.modal = 'Este tutor ha sido agregado a su lista de tutores favoritos';
+    };
+
+    function ObtenerEtiquetaBtn (tipo) {
+        var factory = new Factory();
+        let etiquetaBtn = "";
+        
+        if(tipo == 0) {            
+            etiquetaBtn = factory.createTutor("No Favorito").etiqueta;
+        }else if (tipo == 1) {            
+            etiquetaBtn = factory.createTutor("Favorito").etiqueta;
+        }             
+        return etiquetaBtn;
+    }
+
+    function ObtenerMensajeModal (tipo) {
+        var factory = new Factory();
+        let msjModal = "";
+        
+        if(tipo == 0) {            
+            msjModal = factory.createTutor("No Favorito").modal;
+        }else if (tipo == 1) {            
+            msjModal = factory.createTutor("Favorito").modal;
+        }             
+        return msjModal;
+    }
+    
 
     return(
         <div className={styles.Datos}>
+
+                <AnimatePresence
+                    initial={false}
+                    exitBeforeEnter={true}
+                    onExitComplete={() => null}>
+                    { isOpenModal && <ModalFavorito closeModal={closeModal} mensaje={ObtenerMensajeModal(tutor.favorito)} />}
+                </AnimatePresence>
+
             <div className={styles.DatosCabecera}>
                 <h2>Más datos sobre {TutorVisto.nombre}</h2>            
                 <button className={styles.botonEditarDatos}  
                 onClick={() => handleFavorito()}>
-                    <FontAwesomeIcon icon={faStar}/>Agregar a Favoritos
+                    <FontAwesomeIcon icon={faStar}/>
+                    <p className={styles.etiquetabtn}>{ObtenerEtiquetaBtn(tutor.favorito)}</p>
                 </button>
             </div>
             <div className={styles.DatosBody}>

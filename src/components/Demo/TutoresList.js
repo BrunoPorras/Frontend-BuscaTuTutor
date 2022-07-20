@@ -16,7 +16,7 @@ import perfil from '../../assets/Demo/perfil1.PNG'
 //  Helpers
 import { wsp } from '../../helpers/whatsapp'
 
-const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false, mode }) => {
+const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false, mode = "normal" }) => {
 
     const navigate = useNavigate()
 

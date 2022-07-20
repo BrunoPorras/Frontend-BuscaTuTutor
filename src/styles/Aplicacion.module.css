@@ -139,6 +139,12 @@
     
 }
 
+.etiquetabtn {
+    display: inline;
+    padding-left: 10px;
+    margin: 0;
+}
+
 .DatoItem label {
     margin-left: 10px;
 }
