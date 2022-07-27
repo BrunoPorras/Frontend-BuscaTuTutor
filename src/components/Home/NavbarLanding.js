@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 
 //  Hooks
-import { useMenuMobile } from '../../hooks/useMenuMobile'
+import { useMenuMobile } from '../../hooks/useMenuMobile.js'
 
 //  Estilos, assets y efectos
 import { Link as ScrollLink } from 'react-scroll'

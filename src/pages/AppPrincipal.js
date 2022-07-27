@@ -1,8 +1,8 @@
 import styles from '../styles/NavSideBarApp.module.css';
 
-import NavbarApp from '../components/Aplicacion/NavbarApp';
-import SidebarApp from '../components/Aplicacion/SidebarApp';
-import ContenidoInicio from '../components/Aplicacion/ContenidoInicio';
+import NavbarApp from '../components/Aplicacion/NavbarApp.js';
+import SidebarApp from '../components/Aplicacion/SidebarApp.js';
+import ContenidoInicio from '../components/Aplicacion/ContenidoInicio.js';
 
 
 const AppPrincipal = () => {

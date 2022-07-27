@@ -3,13 +3,13 @@ import axios from 'axios'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-import { Cards, Carrousel } from "../components/Demo/Cards"
-import { Search } from "../components/Demo/Search"
-import TutoresList from "../components/Demo/TutoresList"
-import NavbarLanding from "../components/Home/NavbarLanding"
+import { Cards, Carrousel } from "../components/Demo/Cards.js"
+import { Search } from "../components/Demo/Search.js"
+import TutoresList from "../components/Demo/TutoresList.js"
+import NavbarLanding from "../components/Home/NavbarLanding.js"
 
-import usePagination from '../hooks/usePagination'
-import { calcPages } from '../helpers/calcPages'
+import usePagination from '../hooks/usePagination.js'
+import { calcPages } from '../helpers/calcPages.js'
 
 import styles from '../styles/DemoContainer.module.css'
 

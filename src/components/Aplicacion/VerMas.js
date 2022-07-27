@@ -4,12 +4,12 @@ import styles from '../../styles/Aplicacion.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk, faUserAlt , faPen, faStar , faPhone, faUserGraduate, faChalkboardUser, faBookOpen} from '@fortawesome/free-solid-svg-icons'
 
-import { ModalFavorito } from '../Modal/Modals'
-import useModal from '../../hooks/useModal'
+import { ModalFavorito } from '../Modal/Modals.js'
+import useModal from '../../hooks/useModal.js'
 import { AnimatePresence } from 'framer-motion'
 
 import perfil from '../../assets/Demo/perfil1.PNG';
-import TutoresFactory from '../Clases/TutoresFactory';
+import TutoresFactory from '../Clases/TutoresFactory.js';
 
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/getTutor";
 

@@ -1,5 +1,5 @@
-import NavbarLanding from "../components/Home/NavbarLanding"
-import { Portada, QueHacemos, Testimonios, Footer } from "../components/Home/Portada"
+import NavbarLanding from "../components/Home/NavbarLanding.js"
+import { Portada, QueHacemos, Testimonios, Footer } from "../components/Home/Portada.js"
 
 const Home = () => {
 

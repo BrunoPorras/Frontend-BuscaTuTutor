@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import styles from '../styles/DemoRegister.module.css'
-import Header from '../components/Login/Header';
-import { Footer } from '../components/Home/Portada';
+import Header from '../components/Login/Header.js';
+import { Footer } from '../components/Home/Portada.js';
 import merchLaptop from '../assets/Landing page/merchLaptop.png'
 const baseUrl = "https://buscatututorbackend.herokuapp.com/api/create";
 

@@ -2,17 +2,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 //  Páginas base
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import NotFound from './pages/NotFound';
-import SerTutor from './pages/SerTutor';
-import Demo from './pages/Demo';
-import AppPrincipal from './pages/AppPrincipal';
-import MiPerfil from './pages/AppMiPerfil';
-import VerMasTutor from './pages/AppVerMasTutor';
-import MisFavoritos from './pages/MisFavoritos';
-import AppBuscar from './pages/AppBuscar';
+import Home from './pages/Home.js';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
+import NotFound from './pages/NotFound.js';
+import SerTutor from './pages/SerTutor.js';
+import Demo from './pages/Demo.js';
+import AppPrincipal from './pages/AppPrincipal.js';
+import MiPerfil from './pages/AppMiPerfil.js';
+import VerMasTutor from './pages/AppVerMasTutor.js';
+import MisFavoritos from './pages/MisFavoritos.js';
+import AppBuscar from './pages/AppBuscar.js';
 
 const App = () => {
 

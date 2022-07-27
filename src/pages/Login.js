@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Header from '../components/Login/Header';
+import Header from '../components/Login/Header.js';
 import styles from '../styles/Login.module.css';
-import { Footer } from "../components/Home/Portada"
+import { Footer } from "../components/Home/Portada.js"
 import merchLaptop from '../assets/Landing page/merchLaptop.png'
 import { useNavigate } from 'react-router-dom';
 

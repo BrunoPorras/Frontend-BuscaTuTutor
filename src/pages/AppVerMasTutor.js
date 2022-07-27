@@ -1,8 +1,8 @@
 import styles from '../styles/NavSideBarApp.module.css';
 
-import NavbarApp from '../components/Aplicacion/NavbarApp';
-import SidebarApp from '../components/Aplicacion/SidebarApp';
-import VerMas from '../components/Aplicacion/VerMas';
+import NavbarApp from '../components/Aplicacion/NavbarApp.js';
+import SidebarApp from '../components/Aplicacion/SidebarApp.js';
+import VerMas from '../components/Aplicacion/VerMas.js';
 
 
 const VerMasTutor = () => {

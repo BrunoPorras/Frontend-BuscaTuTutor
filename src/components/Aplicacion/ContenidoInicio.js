@@ -1,14 +1,14 @@
 import stylesApp from '../../styles/Aplicacion.module.css';
-import TituloBienvenida from './TituloBienvenida';
+import TituloBienvenida from './TituloBienvenida.js';
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-import TutoresList from "../../components/Demo/TutoresList"
-import { Search } from "../../components/Demo/Search"
-import usePagination from '../../hooks/usePagination'
-import { calcPages } from '../../helpers/calcPages'
+import TutoresList from "../../components/Demo/TutoresList.js"
+import { Search } from "../../components/Demo/Search.js"
+import usePagination from '../../hooks/usePagination.js'
+import { calcPages } from '../../helpers/calcPages.js'
 
 import styles from '../../styles/DemoContainer.module.css'
 

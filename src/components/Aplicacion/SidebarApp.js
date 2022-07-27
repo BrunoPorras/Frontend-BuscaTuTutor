@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { ModalTerms } from '../Modal/Modals'
-import useModal from '../../hooks/useModal'
+import { ModalTerms } from '../Modal/Modals.js'
+import useModal from '../../hooks/useModal.js'
 
 import { AnimatePresence } from 'framer-motion'
 import styles from '../../styles/NavSideBarApp.module.css';
-import { SidebarData } from './SidebarData';
+import { SidebarData } from './SidebarData.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faBars

@@ -4,7 +4,7 @@ import styles from '../../styles/Aplicacion.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk, faUserAlt , faPen, faPhone, faUserGraduate, faChalkboardUser, faBookOpen} from '@fortawesome/free-solid-svg-icons'
 
-import Iterator from '../Clases/Iterator'
+import Iterator from '../Clases/Iterator.js'
 
 import perfil from '../../assets/Demo/perfil1.PNG';
 

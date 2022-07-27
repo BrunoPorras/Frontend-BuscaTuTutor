@@ -1,9 +1,9 @@
 import styles from '../styles/NavSideBarApp.module.css';
 
-import NavbarApp from '../components/Aplicacion/NavbarApp';
-import SidebarApp from '../components/Aplicacion/SidebarApp';
-import DatosEstudiante from '../components/Aplicacion/DatosEstudiante';
-import DatosTutor from '../components/Aplicacion/DatosTutor';
+import NavbarApp from '../components/Aplicacion/NavbarApp.js';
+import SidebarApp from '../components/Aplicacion/SidebarApp.js';
+import DatosEstudiante from '../components/Aplicacion/DatosEstudiante.js';
+import DatosTutor from '../components/Aplicacion/DatosTutor.js';
 
 
 const MiPerfil = () => {

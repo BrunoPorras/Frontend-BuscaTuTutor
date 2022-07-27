@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from '../../styles/Navbar.module.css'
 import icono from '../../assets/Landing page/icono.png'
-import { useMenuMobile } from '../../hooks/useMenuMobile'
+import { useMenuMobile } from '../../hooks/useMenuMobile.js'
 
 const Header = ({ login = true }) => {
 

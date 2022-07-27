@@ -1,5 +1,5 @@
 //  Componentes
-import Backdrop from './Backdrop'
+import Backdrop from './Backdrop.js'
 import { useNavigate } from 'react-router-dom'
 
 //  Estilos e íconos

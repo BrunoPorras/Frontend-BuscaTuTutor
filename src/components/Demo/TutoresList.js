@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGraduate, faBook } from '@fortawesome/free-solid-svg-icons'
 import styles from '../../styles/Demo.module.css'
 
-import { PageControllers } from './PageControllers'
-import { ModalDemo } from '../Modal/Modals'
-import useModal from '../../hooks/useModal'
+import { PageControllers } from './PageControllers.js'
+import { ModalDemo } from '../Modal/Modals.js'
+import useModal from '../../hooks/useModal.js'
 import perfil from '../../assets/Demo/perfil1.PNG'
 
 //  Helpers
-import { wsp } from '../../helpers/whatsapp'
+import wsp from '../../helpers/whatsapp.js'
 
 const TutoresList = ({ loading, data, nextPage, prevPage, totalPages, currentPage, demoMode = false, mode = "normal" }) => {
 
